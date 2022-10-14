@@ -25,7 +25,8 @@ async function fetchData(urlApi) {
     ${videos.items
       .map(
         (video) => `
-      <div class="group relative" onclick='() => alert('hi')'>
+        <a href="https://www.youtube.com/watch?v=${video.id.videoId}" target="_blank">
+        <div class="group relative">
         <div
           class="w-full bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:aspect-none"
           >
@@ -38,9 +39,9 @@ async function fetchData(urlApi) {
           </h3>
         </div>
       </div>
+    </a>
     `
       )
-      .slice(0, 10)
       .join("")}
     `;
     console.log(videos);
